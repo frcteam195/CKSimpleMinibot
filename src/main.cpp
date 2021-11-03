@@ -8,10 +8,8 @@
 #include "utils/UDPHelper.hpp"
 #include "utils/MotorHelper.hpp"
 
+#include "WiFiCredentials.hpp"
 
-// WiFi network name and password:
-const char* netName = "WIFI_NAME";
-const char* netPswd = "********";
 const uint16_t kUDPPort = 5809;
 
 const uint8_t LED_PIN = 13;
