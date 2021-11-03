@@ -8,6 +8,8 @@
 #include "utils/UDPHelper.hpp"
 #include "utils/MotorHelper.hpp"
 
+
+//Make sure to update this file with your WiFi Credentials
 #include "WiFiCredentials.hpp"
 
 const uint16_t kUDPPort = 5809;
