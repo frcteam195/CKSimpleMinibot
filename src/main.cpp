@@ -24,8 +24,8 @@ WiFiUDP mUDP;
 char mPacketBuffer[1505];
 
 Adafruit_MotorShield AFMS = Adafruit_MotorShield();
-Adafruit_DCMotor *leftMotor = AFMS.getMotor(3);
-Adafruit_DCMotor *rightMotor = AFMS.getMotor(4);
+Adafruit_DCMotor *leftMotor = AFMS.getMotor(4);
+Adafruit_DCMotor *rightMotor = AFMS.getMotor(3);
 
 unsigned long mHeartbeat;
 static constexpr unsigned long TIMEOUT_MILLIS = 2000;
@@ -78,16 +78,16 @@ void setup() {
 }
 
 void loop() {
-	int sensorValue = analogRead(A0);
-	// Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
-	float voltage = (sensorValue * (5.0 / 1023.0)) * 2.0;	//Double voltage (resistive tap) - Check this to make sure is not 3.3v
+	// int sensorValue = analogRead(A0);
+	// // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
+	// float voltage = (sensorValue * (5.0 / 1023.0)) * 2.0;	//Double voltage (resistive tap) - Check this to make sure is not 3.3v
 
-	if (voltage < 3.4)
-	{
-		//Do something for low battery handling
-		//Blink LED every 2000 cycles
-		blinkLEDStep(2000);
-	}
+	// if (voltage < 3.4)
+	// {
+	// 	//Do something for low battery handling
+	// 	//Blink LED every 2000 cycles
+	// 	blinkLEDStep(2000);
+	// }
 
 	int packetSize = mUDP.parsePacket();
 	if (packetSize) {
